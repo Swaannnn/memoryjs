@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Memory Game</title>
+    <link rel="stylesheet" href="css/style.css">
+<!--    <link rel="icon" type="image/png" href="assets/favicon.png">-->
+</head>
+<body>
+    <div class="container">
+        <p id="title">MemoryJS</p>
+
+        <div id="game">
+            <div class="row" id="row0">
+                <div class="card" id="card0" onclick="clickCard(0)"></div>
+                <div class="card" id="card1" onclick="clickCard(1)"></div>
+                <div class="card" id="card2" onclick="clickCard(2)"></div>
+                <div class="card" id="card3" onclick="clickCard(3)"></div>
+                <div class="card" id="card4" onclick="clickCard(4)"></div>
+                <div class="card" id="card5" onclick="clickCard(5)"></div>
+            </div>
+
+            <div class="row" id="row1">
+                <div class="card" id="card6" onclick="clickCard(6)"></div>
+                <div class="card" id="card7" onclick="clickCard(7)"></div>
+                <div class="card" id="card8" onclick="clickCard(8)"></div>
+                <div class="card" id="card9" onclick="clickCard(9)"></div>
+                <div class="card" id="card10" onclick="clickCard(10)"></div>
+                <div class="card" id="card11" onclick="clickCard(11)"></div>
+            </div>
+
+            <div class="row" id="row2">
+                <div class="card" id="card12" onclick="clickCard(12)"></div>
+                <div class="card" id="card13" onclick="clickCard(13)"></div>
+                <div class="card" id="card14" onclick="clickCard(14)"></div>
+                <div class="card" id="card15" onclick="clickCard(15)"></div>
+                <div class="card" id="card16" onclick="clickCard(16)"></div>
+                <div class="card" id="card17" onclick="clickCard(17)"></div>
+            </div>
+
+            <div class="row" id="row3">
+                <div class="card" id="card18" onclick="clickCard(18)"></div>
+                <div class="card" id="card19" onclick="clickCard(19)"></div>
+                <div class="card" id="card20" onclick="clickCard(20)"></div>
+                <div class="card" id="card21" onclick="clickCard(21)"></div>
+                <div class="card" id="card22" onclick="clickCard(22)"></div>
+                <div class="card" id="card23" onclick="clickCard(23)"></div>
+            </div>
+        </div>
+
+        <p id="error">Errors : 0</p>
+
+        <div class="screen-container" id="start">
+            <div class="screen">
+                <p>welcome to Memory</p>
+                <p class="button" onclick="startGame()">start</p>
+            </div>
+        </div>
+        <div class="screen-container" id="end">
+            <div class="screen">
+                <p>GG its win</p>
+                <p id="total-errors"></p>
+                <p class="button" onclick="restartGame()">play again</p>
+            </div>
+        </div>
+    </div>
+    <script src="js/script.js"></script>
+</body>
+</html>
