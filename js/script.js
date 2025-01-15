@@ -9,6 +9,8 @@ let errors = 0;
 let startDiv = document.getElementById('start');
 let endDiv = document.getElementById('end');
 
+// TODO: bloquer clic avant start game
+
 function startGame() {
     startDiv.style.display = 'none';
     fillCards();
@@ -41,14 +43,11 @@ function generateRandomArray() {
 
 function fillCards() {
     let cards = document.getElementsByClassName("card");
-
-    Array.from(cards).forEach((card, i) => {
-        card.innerHTML = '';
+    Array.from(cards).forEach((card, index) => {
+        card.src = `assets/cards1/${values[index]}.png`
         card.classList.remove('taked');
         card.classList.remove('selected');
-        let p = document.createElement("p");
-        p.textContent = values[i].toString();
-        card.appendChild(p);
+        // p.textContent = values[i].toString();
     })
 }
 
@@ -66,11 +65,13 @@ function clickCard(numCard) {
         if (cardsSelect.length === 2) {
             clickReady = false;
             if (valueSelect[0] === valueSelect[1]) {
-                cardsSelect.forEach((card) => {
-                    card.classList.add('taked');
-                    card.classList.remove('selected');
-                })
-                resetChoice();
+                setTimeout(() => {
+                    cardsSelect.forEach((card) => {
+                        card.classList.add('taked');
+                        card.classList.remove('selected');
+                    })
+                    resetChoice();
+                }, 1000)
             } else {
                 errors++;
                 showErrors();
